@@ -1,0 +1,24 @@
+Fs=44100;             
+       
+A=1;                   
+phi1=pi;
+phi2=2*pi;
+
+t=[0:1/Fs:3];
+
+fd=15;
+fc=800;
+
+y1=A*cos(2*pi*fd*t);     %
+y2=A*cos(2*pi*fc*t);
+y3=y1.*y2;
+
+tplot=t;
+plot(tplot,y3,'color','r');
+
+sound(y3,Fs)
+y4=A*cos(2*pi*fd*2*t);     %
+y5=A*cos(2*pi*fc*t);
+y6=y1.*y2;
+figure
+plot(tplot,y3,'color','b')
